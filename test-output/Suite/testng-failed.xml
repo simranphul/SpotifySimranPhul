@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Create new account(failed)">
+    <classes>
+      <class name="simranphul.spotifyapp.CreateNewAccount">
+        <methods>
+          <include name="createAccountSuccess"/>
+          <include name="existingAccountCloseClick"/>
+          <include name="existingAccountGoToLoginClick"/>
+          <include name="ConfigureAppium"/>
+          <include name="invalidPassword"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- simranphul.spotifyapp.CreateNewAccount -->
+    </classes>
+  </test> <!-- Create new account(failed) -->
+  <test thread-count="5" name="Login to existing account(failed)">
+    <classes>
+      <class name="simranphul.spotifyapp.LoginToApp">
+        <methods>
+          <include name="testInvalidPassword"/>
+          <include name="ConfigureAppium"/>
+          <include name="testSuccessfulLogin"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- simranphul.spotifyapp.LoginToApp -->
+    </classes>
+  </test> <!-- Login to existing account(failed) -->
+</suite> <!-- Failed suite [Suite] -->
