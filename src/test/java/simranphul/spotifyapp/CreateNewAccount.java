@@ -15,7 +15,19 @@ import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.Activity;
 
 public class CreateNewAccount extends BaseClass {
- 
+	
+	@BeforeMethod
+	public void preSetup()
+	{
+		    ((JavascriptExecutor) driver).executeScript("mobile: startActivity", ImmutableMap.of(
+		        "appPackage", "com.spotify.music",
+		        "appActivity", "com.spotify.login.loginflowimpl.LoginActivity"
+		    ));
+	}
+		/* Activity activity= new Activity("com.spotify.music","com.spotify.login.loginflowimpl.LoginActivity");
+		((JavascriptExecutor)driver).executeScript("mobile: startActivity", ImmutableMap.of("intent","com.spotify.music/com.spotify.login.loginflowimpl.LoginActivity")); */  //intent that specifies which activity to start
+	
+
 	@Test
 	public void invalidPassword()
 	{
@@ -27,7 +39,7 @@ public class CreateNewAccount extends BaseClass {
 		String actualErrorMessage = createAccount.getErrorMessage();
         String expectedErrorMessage = "Use at least 10 characters."; 
         AssertJUnit.assertEquals(actualErrorMessage, expectedErrorMessage, "Error message does not match");
-    }
+    }   
  	
 	
 	@Test
@@ -64,8 +76,7 @@ public class CreateNewAccount extends BaseClass {
 		createAccount.setGender("female");
 		createAccount.clickNameNextButton();			
      }
-			
-	
+				
 }
 	
 

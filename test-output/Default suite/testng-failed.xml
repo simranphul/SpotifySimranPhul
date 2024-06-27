@@ -5,6 +5,7 @@
     <classes>
       <class name="simranphul.spotifyapp.LoginToApp">
         <methods>
+          <include name="setUp"/>
           <include name="testInvalidPassword"/>
           <include name="ConfigureAppium"/>
           <include name="tearDown"/>

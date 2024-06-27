@@ -14,11 +14,11 @@ public class CreateAccount extends AndroidActions {
 	
 	AndroidDriver driver;  //declaring an instance variable driver of type AndroidDriver. This is the driver object used to communicate with the Android device or emulator.
 	
-	
+	//constructor executes a block of code whenever an object is created, will not return any values and name same as classname
 	public CreateAccount(AndroidDriver driver)
 	{
-		super(driver);  //Super Constructor Call - calls the constructor of the superclass AndroidActions, passing the driver instance to it. This initializes the superclass with the driver.
-		this.driver= driver;  //assigning the driver passed to the constructor to the driver field of the CreateAccount class, ensuring it's accessible throughout the class.
+		super(driver);  //Super Constructor Call - super brings value from parent class. calls the constructor of the superclass AndroidActions, passing the driver instance to it. This initializes the superclass with the driver. 
+		this.driver= driver;  //assigning the driver passed to the constructor to the driver field of the CreateAccount class, ensuring it's accessible throughout the class. this brings value from class/object level
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);  //initializes elements in the CreateAccount class using the Page Object Model approach
 		
 	}
